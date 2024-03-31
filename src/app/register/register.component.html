@@ -1,0 +1,58 @@
+<div class="registration-form">
+  <h2>Registration Form</h2>
+  <form  #registrationForm="ngForm">
+      <div class="form-group">
+          <label for="photo">Upload Photo (310x325 px):</label>
+          <input type="file" id="photo" accept="image/png, image/jpeg" (change)="onPhotoSelected($event)" required>
+      </div>
+      <div style="display: grid; grid-template-columns: 49.3% 49.3%; gap: 10px;">
+          <div class="form-group">
+              <input [max]="20" (keypress)="funRestName($event)" type="text" placeholder="First Name" id="firstName" name="firstName" [(ngModel)]="user.firstName" pattern="[a-zA-Z]+" maxlength="20" required>
+          </div>
+          <div class="form-group">
+              <input type="text" placeholder="Last Name" id="lastName" name="lastName" [(ngModel)]="user.lastName" pattern="[a-zA-Z]+" maxlength="20" required>
+          </div>
+      </div>
+      <div class="form-group">
+          <input type="text" placeholder="Mobile Number" id="mobile" name="mobile" [(ngModel)]="user.mobile" required>
+      </div>
+      <div class="form-group">
+          <label for="age">Select Age:</label>
+          <mat-slider style="width: 50%;" min="18" max="100" step="1" showTickMarks discrete [displayWith]="formatLabel" [(ngModel)]="user.age">
+              <input matSliderThumb>
+          </mat-slider>
+      </div>
+      <div class="form-group">
+          <select id="state" name="state" [(ngModel)]="user.state">
+              <option value="">Select State</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Gujarat">Gujarat</option>
+          </select>
+      </div>
+      <div class="form-group">
+          <select id="city" name="city" [(ngModel)]="user.city">
+              <option value="">Select City</option>
+              <option value="Pune">Pune</option>
+              <option value="Mumbai">Mumbai</option>
+          </select>
+      </div>
+      <div class="form-group">
+          <input placeholder="Address" type="text" id="address" name="address" [(ngModel)]="user.address" required>
+      </div>
+      <div class="form-group">
+          <input (keypress)="onEnterKeyPressed($event)" placeholder="Tags" type="text" id="tags" name="tags" [(ngModel)]="user.tags">
+          <div class="tags-container">
+              <div *ngFor="let tag of tagsArray;let i=index" class="tag-item">
+                  <span>{{ tag }}</span>
+                  <span>
+                      <img (click)="removeTag(i)" style="cursor: pointer;" height="15px" src="../../assets/images/crossIcon.png" alt="">
+                  </span>
+              </div>
+          </div>
+      </div>
+      <div style="display: flex; justify-content: end;">
+          <button (click)="onCancelClick()" class="cancel" type="button">Cancel</button>
+          <button (click)="submitForm()" type="submit">Submit</button>
+      </div>
+  </form>
+</div>

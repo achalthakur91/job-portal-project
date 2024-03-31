@@ -1,0 +1,84 @@
+
+/* body{
+    background-image: url("../../assets/images/laptop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+h2{
+    font-size: 30px;
+    color: rgb(81, 13, 13);
+    font-family:'Times New Roman', Times, serif;
+    padding-left: 30%;
+    padding-top: 10%;
+    font-weight: 100;
+}
+
+
+.box{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.5);
+    backdrop-filter: blur(30px);
+    background-image: url("../../assets/images/laptop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    
+}
+
+h3{
+    margin-left: 45%;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 50;
+}
+h1{
+    font-weight: 200;
+    margin-left: 35%;
+}
+h5{
+    margin-left: 25%;
+    font-weight: 40;
+}
+hr{
+    background-color: skyblue;
+    width: 10%;
+    height: 0.5pt;
+}
+a{
+    color: black;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 5%;
+    font-weight: 50;
+}
+.parentNavigationBar{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%
+    /* padding-top: 3%; */
+}
+.demoTitle{
+    margin-left: 21%;
+    font-size: 25px;
+    padding-top: 2%;
+}
+.demoSpan{
+    background-color: white;
+    padding: 6px;
+}
+.nav-item {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-item.active {
+    color: black;
+    font-size: 20px;
+    border-top: 5px solid rgb(77, 236, 228);
+}
+.jobType{
+    /* margin-left: 20%; */
+
+}
